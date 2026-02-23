@@ -5,7 +5,7 @@ import {
   LAMPORTS_PER_SOL,
 } from "@solana/web3.js";
 
-const connection = new Connection(clusterApiUrl("devnet"));
+const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
 // TODO: add github authentication to make this work
 const airDrop = async (publicKey, amount) => {
