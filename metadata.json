@@ -1,0 +1,17 @@
+{
+  "name": "Penguin Token",
+  "symbol": "PENG",
+  "description": "The chilliest token on Solana. Built for vibes, rewards, and community power 🐧❄️ built by harpalll (github.com/harpalll).",
+  "uri": "https://res.cloudinary.com/dlx4wfuyh/raw/upload/v1771869527/metadata_t8khqi.json",
+  "image": "https://res.cloudinary.com/dlx4wfuyh/image/upload/v1771868614/pngtree-peek-a-boo-penguin-for-kids-png-image_14508909_hkzduq.png",
+  "seller_fee_basis_points": 0,
+  "properties": {
+    "files": [
+      {
+        "uri": "https://res.cloudinary.com/dlx4wfuyh/image/upload/v1771868614/pngtree-peek-a-boo-penguin-for-kids-png-image_14508909_hkzduq.png",
+        "type": "image/jpg"
+      }
+    ],
+    "category": "image"
+  }
+}

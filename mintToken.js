@@ -11,13 +11,13 @@ const payer = Keypair.fromSecretKey(
     130,
   ]),
 );
-const mint = new PublicKey("45YfWX12T1fkZMkDLEZZksiPoBSfofmBcXeKH6yB74wC");
+const mint = new PublicKey("Liu3XnAPSxMGqzKFyceZZS4dvgFuGuvaQgyfPsixQPs");
 
 const tokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   payer,
   mint,
-  payer.publicKey,
+  new PublicKey("5vxQg3YE9fxRdbfBC3PhxATZApiLJpFP8G4GjGdb2n6J"),
 );
 
 const mintToken = async (amount) => {
@@ -27,8 +27,8 @@ const mintToken = async (amount) => {
       payer,
       mint,
       tokenAccount.address,
-      payer,
-      amount * Math.pow(10, 9),
+      payer.publicKey,
+      amount * Math.pow(10, 6),
     );
     return mintTx;
   } catch (error) {
