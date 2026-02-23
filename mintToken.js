@@ -1,4 +1,8 @@
-import { getOrCreateAssociatedTokenAccount, mintTo } from "@solana/spl-token";
+import {
+  getOrCreateAssociatedTokenAccount,
+  mintTo,
+  TOKEN_2022_PROGRAM_ID,
+} from "@solana/spl-token";
 import { Connection, Keypair, PublicKey, clusterApiUrl } from "@solana/web3.js";
 
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -17,7 +21,11 @@ const tokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   payer,
   mint,
-  new PublicKey("5vxQg3YE9fxRdbfBC3PhxATZApiLJpFP8G4GjGdb2n6J"),
+  payer.publicKey,
+  true,
+  "confirmed",
+  undefined,
+  TOKEN_2022_PROGRAM_ID,
 );
 
 const mintToken = async (amount) => {
@@ -29,6 +37,9 @@ const mintToken = async (amount) => {
       tokenAccount.address,
       payer.publicKey,
       amount * Math.pow(10, 6),
+      [],
+      undefined,
+      TOKEN_2022_PROGRAM_ID,
     );
     return mintTx;
   } catch (error) {
